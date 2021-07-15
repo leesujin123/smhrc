@@ -5,34 +5,34 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/Participation")
+@RequestMapping("/participation")
 public class ParticipationController {
     //교육신청
-    @GetMapping("/EduApplication")
+    @GetMapping("/eduApplication")
     public String application() {
         return "participation/edu_application";
     }
 
     //이수증출력 및 만족도 조사
-    @GetMapping("/EduQualification")
+    @GetMapping("/eduQualification")
     public String qualification() {
         return "participation/edu_qualification";
     }
 
     //설문조사
-    @GetMapping("/Servey")
+    @GetMapping("/servey")
     public String servey() {
         return "participation/servey";
     }
 
     //질문과답변
-    @GetMapping("/Qna")
+    @GetMapping("/qna")
     public String qna() {
         return "participation/question_and_answer";
     }
 
     //자주묻는질문
-    @GetMapping("/Faq")
+    @GetMapping("/faq")
     public String faq() {
         return "participation/frequently_question";
     }
