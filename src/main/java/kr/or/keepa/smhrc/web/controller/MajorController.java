@@ -5,10 +5,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/majorBusinesses")
+@RequestMapping("/major-businesses")
 public class MajorController {
-    @GetMapping(value = "/MajorBusinesses")
-    public String majorBusinesses() {
-        return "majorBusinesses/MajorBusinesses";
+    @GetMapping(value = "")
+    public String root() {
+        return "redirect:/major-businesses/";
     }
+
+    @GetMapping(value = "/")
+    public String index() {
+        return "major-businesses/index";
+    }
+
+
 }
