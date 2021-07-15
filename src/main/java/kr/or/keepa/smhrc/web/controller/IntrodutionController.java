@@ -30,10 +30,10 @@ public class IntrodutionController {
     }
 
     //조직도
-    @GetMapping("/orgChart")
+    @GetMapping("/org-chart")
     public String orgChart() {
         System.out.println("orgChart");
-        return "introdution/organization_chart";
+        return "introdution/org-chart";
     }
 
     //센터로고

@@ -7,16 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/participation")
 public class ParticipationController {
+
     //교육신청
-    @GetMapping("/eduApplication")
-    public String application() {
-        return "participation/edu_application";
-    }
+    @GetMapping("/edu-application")
+    public String application() { return "participation/edu-application"; }
 
     //이수증출력 및 만족도 조사
-    @GetMapping("/eduQualification")
+    @GetMapping("/edu-qualification")
     public String qualification() {
-        return "participation/edu_qualification";
+        return "participation/edu-qualification";
     }
 
     //설문조사
@@ -28,12 +27,13 @@ public class ParticipationController {
     //질문과답변
     @GetMapping("/qna")
     public String qna() {
-        return "participation/question_and_answer";
+        return "participation/qna";
     }
 
     //자주묻는질문
     @GetMapping("/faq")
     public String faq() {
-        return "participation/frequently_question";
+        return "participation/faq";
     }
+
 }
