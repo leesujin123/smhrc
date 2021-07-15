@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <p>hello</p>
+
+    <a th:href="@{/majorBusinesses/MajorBusinesses}" > 주요사업 </a> <br/>
+
+    <a th:href="@{/agencynews/AgencyNews}" > 기관소식 </a>  <br/>
+
+    <a th:href="@{/health/Health}" > 학생정신건강정보 </a>
+
 </body>
 </html>
