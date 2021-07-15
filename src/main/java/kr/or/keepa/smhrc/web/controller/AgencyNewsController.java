@@ -5,23 +5,30 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/agencynews")
+@RequestMapping("/agency-news")
 public class AgencyNewsController {
-
-    @GetMapping(value = "/AgencyNews")
-    public String agencyNews() {
-        return "agencynews/AgencyNews";
+    @GetMapping(value = "")
+    public String root() {
+        return "redirect:/agency-news/";
     }
+
+    @GetMapping(value = "/")
+    public String index() {
+        return "agency-news/index";
+    }
+
     @GetMapping(value = "/notice")
     public String notice() {
-        return "agencynews/notice";
+        return "agency-news/notice";
     }
+
     @GetMapping(value = "/album")
     public String album() {
-        return "agencynews/album";
+        return "agency-news/album";
     }
+
     @GetMapping(value = "/bid")
     public String bid() {
-        return "agencynews/bid";
+        return "agency-news/bid";
     }
 }
