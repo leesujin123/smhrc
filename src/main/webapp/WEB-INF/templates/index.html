@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.w3.org/1999/xhtml"
-      layout:decorator="/layout/layout">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}"
+>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -26,17 +27,11 @@
     </style>
 </head>
 <body>
-    <div id="header">
-        <header th:replace="/fragment/header :: headerFragment"></header>
-    </div>
-    <div id="aside" >
-        <aside th:replace="/fragment/sidebar :: sidebarFragment"></aside>
-    </div>
-    <div id="section">
-        <section layout:fragment="content">
-            본문 내용
-        </section>
-    </div>
+<div id="section">
+    <section layout:fragment="content">
+        본문 내용
+    </section>
+</div>
 </div>
 
 

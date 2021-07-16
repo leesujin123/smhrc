@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<body>
+<!-- header 시작 -->
+<header th:replace="fragment/header :: headerFragment"></header>
+<!-- header 끝 -->
+<!-- sidebar 시작 -->
+<aside th:replace="fragment/sidebar :: sidebarFragment"></aside>
+<!-- sidebar 끝 -->
+<!-- content 시작 -->
+<section layout:fragment="content">
+    Layout
+</section>
+<!-- content 끝 -->
+</body>
+
+</html>
