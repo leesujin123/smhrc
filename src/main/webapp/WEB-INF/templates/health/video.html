@@ -7,11 +7,13 @@
     <title>Title</title>
 </head>
 <body>
-<h1>동영상 자료 페이지</h1>
-<div>
-    <ul>
-        <li><a th:href="@{~/health/video(id=1)}" > 동영상 자료 </a></li>
-    </ul>
-</div>
+<section layout:fragment="content">
+    <h1>동영상 자료 페이지</h1>
+    <div>
+        <ul>
+            <li><a th:href="@{~/health/video(id=1)}" > 동영상 자료 </a></li>
+        </ul>
+    </div>
+</section>
 </body>
 </html>
