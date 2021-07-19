@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/layout}"
+      layout:decorate="~{layouts/news-layout}"
 >
 <head>
     <meta charset="UTF-8">
@@ -29,6 +29,7 @@
 <body>
 <section layout:fragment="content">
     <p>갤러리 게시판 페이지</p>
+    <a th:href=" @{~/board/post}">글쓰기</a>
 </section>
 </body>
 </html>

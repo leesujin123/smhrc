@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<aside th:fragment="sidebarFragment">
+  <div class="bg-info m-5">
+    <h1>공지사항</h1>
+    <div>
+      <ul>
+        <li><a th:href="@{~/agency-news/notice}"> 공지사항 </a></li>
+        <li><a th:href="@{~/agency-news/album}"> 갤러리 </a> </li>
+        <li><a th:href="@{~/agency-news/bid}"> 기타 </a></li>
+      </ul>
+    </div>
+  </div>
+</aside>
+</html>
