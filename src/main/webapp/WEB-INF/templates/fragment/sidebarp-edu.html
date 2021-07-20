@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<aside th:fragment="sidebarFragment">
+  <div class="bg-info m-5">
+    <h1>교육</h1>
+    <div>
+      <ul>
+        <li><a th:href="@{~/participation/edu-application}">교육신청</a></li>
+        <li><a th:href="@{~/participation/edu-qualification}">이수증 출력 및 만족도 조사</a></li>
+      </ul>
+    </div>
+  </div>
+</aside>
+</html>

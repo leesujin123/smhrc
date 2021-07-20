@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/layout}"
+      layout:decorate="~{layouts/participation-layout}"
 >
 <head>
     <meta charset="UTF-8">
     <title>participation</title>
 </head>
 <body>
-<div id="section">
-    <section layout:fragment="content">
-        <div><h1>참여광장</h1></div>
-        <div>
-            <ul>
-                <li><a th:href="@{~/participation/edu-application}">교육신청</a></li>
-                <li><a th:href="@{~/participation/edu-qualification}">이수증 출력 및 만족도 조사</a></li>
-                <li><a th:href="@{~/participation/servey}">설문조사</a></li>
-                <li><a th:href="@{~/participation/qna}">질문과 답</a></li>
-                <li><a th:href="@{~/participation/faq}">자주 묻는 질문</a></li>
-            </ul>
-        </div>
-    </section>
-</div>
-
+    <div id="section">
+        <section layout:fragment="content">
+            <h1>참여광장</h1>
+            <div>
+                <ul>
+                    <li><a th:href="@{~/participation/edu-application}">교육신청</a></li>
+                    <li><a th:href="@{~/participation/edu-qualification}">이수증 출력 및 만족도 조사</a></li>
+                    <li><a th:href="@{~/participation/servey}">설문조사</a></li>
+                    <li><a th:href="@{~/participation/qna}">질문과 답</a></li>
+                    <li><a th:href="@{~/participation/faq}">자주 묻는 질문</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
