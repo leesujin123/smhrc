@@ -14,27 +14,28 @@
     <!-- thymeleaf 설정 -->
     <bean id="templateResolver"
           class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="/WEB-INF/templates/" />
-        <property name="suffix" value=".html" />
-        <property name="templateMode" value="HTML" />
-        <property name="cacheable" value="false" />
+        <property name="prefix" value="/WEB-INF/templates/"/>
+        <property name="suffix" value=".html"/>
+        <property name="templateMode" value="HTML"/>
+        <property name="cacheable" value="false"/>
     </bean>
+
     <bean id="templateEngine"
           class="org.thymeleaf.spring5.SpringTemplateEngine">
-        <property name="templateResolver" ref="templateResolver" />
-        <property name="enableSpringELCompiler" value="true" />
+        <property name="templateResolver" ref="templateResolver"/>
+        <property name="enableSpringELCompiler" value="true"/>
         <property name="additionalDialects">
             <set>
                 <bean class="nz.net.ultraq.thymeleaf.LayoutDialect"/>
             </set>
         </property>
     </bean>
-    <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
-        <property name="templateEngine" ref="templateEngine" />
-        <property name="characterEncoding" value="UTF-8" />
-        <property name="order" value="1" />
-        <property name="viewNames" value="*" />
-    </bean>
 
+    <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine"/>
+        <property name="characterEncoding" value="UTF-8"/>
+        <property name="order" value="1"/>
+        <property name="viewNames" value="*"/>
+    </bean>
 
 </beans>

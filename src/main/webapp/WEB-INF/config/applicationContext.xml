@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+    <!-- DBCP Setting -->
+    <bean id="dataSource"
+          class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.mariadb.jdbc.Driver"/>
+        <property name="url"
+                  value="jdbc:mariadb://192.168.50.212:3306/smhrc?autoReconnect=true&amp;useSSL=false"/>
+        <property name="username" value="lsj"/>
+        <property name="password" value="dltnwls1219"/>
+    </bean>
+
+</beans>
