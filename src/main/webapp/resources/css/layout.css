@@ -18,3 +18,8 @@ section {
     width: 900px;
     height: 700px;
 }
+
+.menu-bar-style {
+    margin: 20px;
+    font-size: 20px;
+}
