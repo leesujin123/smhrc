@@ -5,6 +5,11 @@
     <title>게시판 list</title>
 </head>
 <body>
+
+<div th:each="item : ${test}">
+    <label>TEST</label>
+    <label th:text="${item}"></label>
+</div>
 <table>
     <thead>
     <tr>
@@ -16,6 +21,17 @@
         <th>작성날짜</th>
     </tr>
     </thead>
+    <tbody>
+
+    <tr th:each="item : ${boardList}">
+        <td th:text="${item.bno}">1</td>
+        <td th:text="${item.title}">Title</td>
+        <td th:text="${item.content}">Title</td>
+        <td th:text="${item.hitCnt}">0</td>
+        <td th:text="${item.writer}">Writer</td>
+        <td th:text="${item.createdDate}">createdDate</td>
+    </tr>
+    </tbody>
 </table>
 
 </body>
