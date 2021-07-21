@@ -5,6 +5,11 @@
     <title>게시판 list</title>
 </head>
 <body>
+
+<div th:each="item : ${test}">
+    <label>TEST</label>
+    <label th:text="${item}"></label>
+</div>
 <table>
     <thead>
     <tr>
