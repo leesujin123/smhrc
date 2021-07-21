@@ -2,7 +2,10 @@ package kr.or.keepa.smhrc.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/introdution")
@@ -58,5 +61,14 @@ public class IntrodutionController {
     public String visit() {
         System.out.println("visit");
         return "introdution/visit";
+    }
+
+    //---------------------------------------------------------------------
+
+    //파일업로드 /introdution/file/upload
+    @PostMapping(value = "/file/upload")
+    public String fileUpload(@RequestParam("uploadFile") MultipartFile file) {
+        System.out.println("file안에 뭐들음?" + file);
+        return "introdution/logo";
     }
 }

@@ -26,6 +26,14 @@
             <a th:href="@{~/resources/picture/4p_Symbol_mark.ai}" target="_blank">Ai Download</a>
         </button>
     </div>
+
+    <div class="logo-style">
+        <h3>파일업로드</h3>
+        <form action="/introdution/file/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="uploadFile" />
+            <input type="submit" value="업로드" />
+        </form>
+    </div>
 </section>
 </body>
 </html>
