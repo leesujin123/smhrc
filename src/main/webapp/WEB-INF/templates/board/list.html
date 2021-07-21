@@ -6,10 +6,6 @@
 </head>
 <body>
 
-<div th:each="item : ${test}">
-    <label>TEST</label>
-    <label th:text="${item}"></label>
-</div>
 <table>
     <thead>
     <tr>
@@ -34,6 +30,6 @@
     </tbody>
 </table>
 
-
+    <a th:href="@{~/board/write}">게시판 작성하기</a>
 </body>
 </html>
