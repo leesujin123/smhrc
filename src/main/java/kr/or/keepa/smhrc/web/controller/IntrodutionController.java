@@ -4,8 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.io.*;
+
+import static java.io.File.pathSeparator;
 
 @Controller
 @RequestMapping("/introdution")
@@ -67,8 +70,25 @@ public class IntrodutionController {
 
     //파일업로드 /introdution/file/upload
     @PostMapping(value = "/file/upload")
-    public String fileUpload(@RequestParam("uploadFile") MultipartFile file) {
-        System.out.println("file안에 뭐들음?" + file);
+    public String fileUpload(MultipartFile uploadFile) {
+        //MultipartFile 클래스 :
+        System.out.println("file안에 뭐들음? " + uploadFile);
+        System.out.println("파일컨텐츠 유형 " + uploadFile.getContentType());
+        System.out.println("multipart형식의 매개변수 이름 " + uploadFile.getName());
+        System.out.println("원본파일이름 " + uploadFile.getOriginalFilename());
+        System.out.println("파일크기 " + uploadFile.getSize() + "바이트");
+
+        //파일저장경로설정
+        String path = "C:\\downexam";
+        //원본파일이름
+        String originalFile = uploadFile.getOriginalFilename();
+
+        File file = new File(path + "\\" + originalFile);
+        try {
+            uploadFile.transferTo(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return "introdution/logo";
     }
 }
