@@ -5,6 +5,7 @@ import kr.or.keepa.smhrc.service.board.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,17 +26,20 @@ public class BoardController {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView list(ModelAndView mv) {
-        System.out.println("게시판 list 들어와?");
         List<Board> boardList = boardService.boardList();
         mv.addObject("boardList", boardList);
         mv.setViewName("board/list");
-
-        System.out.println(boardList);
         return mv;
     }
 
-    @RequestMapping(value = "/write")
+    @RequestMapping(value = "/write", method = RequestMethod.GET)
     public String write() {
         return "board/write";
+    }
+
+    @RequestMapping(value = "/write", method = RequestMethod.POST)
+    public String postWrite(Board board) {
+        boardService.write(board);
+        return "redirect:/board/list";
     }
 }

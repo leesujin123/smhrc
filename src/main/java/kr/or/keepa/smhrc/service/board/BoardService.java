@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface BoardService {
     List<Board> boardList();
+
+    void write(Board board);
+
 }

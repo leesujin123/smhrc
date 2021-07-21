@@ -15,8 +15,13 @@ public class BoardServiceImpl implements BoardService {
 
 
     public List<Board> boardList() {
-        System.out.println("게시판 list service 까지는 들어와?");
         return boardMapper.boardList();
 
     }
+
+    public void write(Board board) {
+        boardMapper.write(board);
+    }
+
+
 }
