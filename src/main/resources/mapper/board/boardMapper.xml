@@ -35,5 +35,9 @@
         WHERE bno=#{bno}
     </update>
 
-
+    <delete id="deleteBoard" parameterType="Board">
+        DELETE
+        FROM board
+        WHERE bno=#{bno}
+    </delete>
 </mapper>

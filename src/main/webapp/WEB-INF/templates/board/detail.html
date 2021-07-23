@@ -13,7 +13,8 @@
         내용: <span th:text="${detail.content}"></span> <br/>
     </p>
 
-<a th:href="@{~/board/updateWrite(bno=${detail.bno})}">게시판 수정하기</a>
+    <a th:href="@{~/board/updateWrite(bno=${detail.bno})}">게시판 수정하기</a>
+    <a th:href="@{~/board/delete(bno=${detail.bno})}">삭제하기</a>
 </form>
 </body>
 </html>

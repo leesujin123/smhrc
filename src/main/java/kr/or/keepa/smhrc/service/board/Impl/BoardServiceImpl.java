@@ -32,5 +32,8 @@ public class BoardServiceImpl implements BoardService {
         boardMapper.updateBoard(board);
     }
 
+    public void deleteBoard(int bno) {
+        boardMapper.deleteBoard(bno);
+    }
 
 }
