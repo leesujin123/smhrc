@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 상세페이지</title>
+</head>
+<body>
+<h3>게시판 상세내용</h3>
+<form th:action="@{detail}" method="get">
+    <p>
+        NO:<span th:text="${detail.bno}"></span> <br/>
+        제목: <span th:text="${detail.title}"></span> <br/>
+        내용: <span th:text="${detail.content}"></span> <br/>
+    </p>
+
+<a th:href="@{~/board/updateWrite(bno=${detail.bno})}">게시판 수정하기</a>
+</form>
+</body>
+</html>

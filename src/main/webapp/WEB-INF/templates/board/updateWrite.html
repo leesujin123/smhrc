@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 수정</title>
+</head>
+<body>
+<h3>게시판 수정</h3>
+<form th:action="@{updateWrite}" method="post">
+    NO: <input type="hidden" name="bno" th:value="${detail.bno}"/></br>
+    제목: <input type="text" name="title" th:value="${detail.title}"/> <br/>
+    내용: <input type="text" name="content" th:value="${detail.content}"/> <br/>
+
+    <input type="submit" value="수정하기">
+</form>
+</body>
+</html>
