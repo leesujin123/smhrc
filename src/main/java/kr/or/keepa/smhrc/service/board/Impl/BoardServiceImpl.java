@@ -19,8 +19,17 @@ public class BoardServiceImpl implements BoardService {
 
     }
 
-    public void write(Board board) {
-        boardMapper.write(board);
+    public void insertBoard(Board board) {
+        boardMapper.insertBoard(board);
+    }
+
+    public Board detailBoard(int bno) {
+        return boardMapper.detailBoard(bno);
+
+    }
+
+    public void updateBoard(Board board) {
+        boardMapper.updateBoard(board);
     }
 
 

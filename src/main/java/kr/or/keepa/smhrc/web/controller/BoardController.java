@@ -4,10 +4,8 @@ import kr.or.keepa.smhrc.entity.board.Board;
 import kr.or.keepa.smhrc.service.board.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -25,11 +23,11 @@ public class BoardController {
 
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public ModelAndView list(ModelAndView mv) {
+    public ModelAndView list(ModelAndView m) {
         List<Board> boardList = boardService.boardList();
-        mv.addObject("boardList", boardList);
-        mv.setViewName("board/list");
-        return mv;
+        m.addObject("boardList", boardList);
+        m.setViewName("board/list");
+        return m;
     }
 
     @RequestMapping(value = "/write", method = RequestMethod.GET)
@@ -39,7 +37,29 @@ public class BoardController {
 
     @RequestMapping(value = "/write", method = RequestMethod.POST)
     public String postWrite(Board board) {
-        boardService.write(board);
+        boardService.insertBoard(board);
+        return "redirect:/board/list";
+    }
+
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
+    public ModelAndView detail(@RequestParam("bno") int bno, ModelAndView m) {
+        Board detail = boardService.detailBoard(bno);
+        m.addObject("detail", detail);
+        m.setViewName("board/detail");
+        return m;
+    }
+
+    @RequestMapping(value = "/updateWrite", method = RequestMethod.GET)
+    public ModelAndView upWrite(Board board, ModelAndView m) {
+        Board detail = boardService.detailBoard(board.getBno());
+        m.addObject("detail", detail);
+        m.setViewName("board/updateWrite");
+        return m;
+    }
+
+    @RequestMapping(value = "/updateWrite", method = RequestMethod.POST)
+    public String updateWrite(Board board) {
+        boardService.updateBoard(board);
         return "redirect:/board/list";
     }
 }
