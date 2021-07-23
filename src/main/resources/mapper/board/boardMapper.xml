@@ -2,7 +2,7 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.keepa.smhrc.mapper.board.BoardMapper">
-    <resultMap id="board" type="board">
+    <resultMap id="mapBoard" type="Board">
         <id column="bno" property="bno"/>
         <result column="title" property="title"/>
         <result column="content" property="content"/>
@@ -12,14 +12,28 @@
         <result column="updated_date" property="updatedDate"/>
     </resultMap>
 
-    <select id="boardList" resultMap="board">
+    <select id="boardList" resultMap="mapBoard">
         SELECT *
         FROM board
     </select>
 
-    <insert id="write" parameterType="board">
+    <insert id="insertBoard" parameterType="Board">
         INSERT
         INTO board(title, content, writer)
         VALUES (#{title}, #{content}, #{writer});
     </insert>
+
+    <select id="detailBoard" resultMap="mapBoard">
+        SELECT *
+        FROM board
+        WHERE bno=#{bno}
+    </select>
+
+    <update id="updateBoard" parameterType="Board">
+        UPDATE board
+        SET title =#{title}, content = #{content}
+        WHERE bno=#{bno}
+    </update>
+
+
 </mapper>
