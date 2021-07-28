@@ -13,6 +13,14 @@
         내용: <span th:text="${detail.content}"></span> <br/>
     </p>
 
+    <div>
+        <form th:action="@{reply}" method="post">
+            <input type="hidden" name="bno" th:value="${detail.bno}"/>
+            <textarea th:rows="content"></textarea>
+            <input type="submit" value="댓글 등록하기">
+        </form>
+    </div>
+
     <a th:href="@{~/board/updateWrite(bno=${detail.bno})}">게시판 수정하기</a>
     <a th:href="@{~/board/delete(bno=${detail.bno})}">삭제하기</a>
 </form>
